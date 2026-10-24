@@ -443,7 +443,7 @@ def plot_severity_map_static(
         mapped["latitude"].max() + latitude_padding,
     )
     if basemap:
-        source = basemap_source or ctx.providers.CartoDB.Positron
+        source = basemap_source or ctx.providers.OpenStreetMap.Mapnik
         try:
             ctx.add_basemap(
                 ax,
@@ -456,7 +456,7 @@ def plot_severity_map_static(
             ax.text(
                 0.995,
                 0.005,
-                "Fond : © OpenStreetMap, © CARTO",
+                "Fond : © OpenStreetMap contributors",
                 transform=ax.transAxes,
                 ha="right",
                 va="bottom",
@@ -623,7 +623,7 @@ def plot_severity_map(
     dataframe: pd.DataFrame,
     *,
     output: str | Path | None = None,
-    tiles: str = "CartoDB positron",
+    tiles: str = "OpenStreetMap",
     attr: str | None = None,
     cluster: bool = True,
     max_points: int | None = 20_000,

@@ -39,8 +39,8 @@ def build_web_map(
     title: str = "Carte des accidents corporels",
     fallback_center: tuple[float, float] = (46.5, 2.2),
     fallback_zoom: int = 5,
-    basemap_url: str = "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
-    basemap_attribution: str = "© OpenStreetMap, © CARTO",
+    basemap_url: str = "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    basemap_attribution: str = "© OpenStreetMap contributors",
 ) -> Path:
     """Construit un site cartographique WebGL et retourne son fichier ``index.html``.
 
